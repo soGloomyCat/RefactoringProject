@@ -2,6 +2,8 @@
 
 public class PlayerMover : MonoBehaviour
 {
+    private const float Denominator = 2f;
+
     [SerializeField] private float _speed;
     [SerializeField] private float _startCooldown;
 
@@ -52,7 +54,7 @@ public class PlayerMover : MonoBehaviour
 
     private void ReduceSpeed()
     {
-        _speed /= 2;
+        _speed /= Denominator;
         _isSpeedReduced = true;
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class EventsHandler : MonoBehaviour
 {
+    private const float ExtremeSpeedValue = 0.1f;
+
     [SerializeField] private CollisionHandler _collisionHandler;
     [SerializeField] private EnemySpawner _enemiesSpawner;
     [SerializeField] private BoostersSpawner _boostersSpawner;
@@ -39,7 +41,7 @@ public class EventsHandler : MonoBehaviour
 
     private void Update()
     {
-        if (_player.KilledEnemiesCount == _enemiesSpawner.EnemiesCount || _playerMover.Speed <= 0)
+        if (_player.KilledEnemiesCount == _enemiesSpawner.EnemiesCount || _playerMover.Speed <= ExtremeSpeedValue)
             OpenGameOverPanel();
     }
 
